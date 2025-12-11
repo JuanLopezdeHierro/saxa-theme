@@ -21,7 +21,13 @@
 
     {% # Load and preload the critical CSS %}
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
-    {{ 'saxa-custom.css' | asset_url | stylesheet_tag }}
+    {{ 'saxa-global.css' | asset_url | stylesheet_tag }}
+
+    <style>
+      body, h1, h2, h3, h4, h5, h6, p, a, button, input {
+        font-family: system-ui, "Helvetica Neue", Inter, sans-serif !important;
+      }
+    </style>
 
     {% # Social, title, etc. %}
     {% render 'meta-tags' %}

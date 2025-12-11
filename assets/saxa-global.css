@@ -1,31 +1,3 @@
-/* SAXA Custom CSS - Tech Noir / Brutalist Overhaul */
-
-:root {
-    /* Strict Design Tokens */
-    --saxa-black: #000000;
-    --saxa-white: #FFFFFF;
-    --saxa-grey: #CCCCCC;
-    --saxa-charcoal: #333333;
-
-    /* Override Dawn Global Variables */
-    --color-base-text: 255, 255, 255;
-    /* RGB for White */
-    --color-base-background-1: 0, 0, 0;
-    /* RGB for Black */
-    --color-base-background-2: 0, 0, 0;
-    --color-base-solid-button-labels: 0, 0, 0;
-    --color-base-outline-button-labels: 255, 255, 255;
-    --color-base-accent-1: 0, 0, 0;
-    --color-base-accent-2: 0, 0, 0;
-
-    --page-width: 1600px;
-    /* Wider layout for brutalist feel */
-}
-
-/* -------------------------------------------------------------------------- */
-/* GLOBAL RESETS & TYPOGRAPHY                                                 */
-/* -------------------------------------------------------------------------- */
-
 body,
 .gradient {
     background-color: var(--saxa-black) !important;
@@ -259,30 +231,80 @@ select,
     color: var(--saxa-black) !important;
     text-decoration: none !important;
 }
+
 /* Header Overrides */
 header {
-  background-color: var(--saxa-black) !important;
-  border-bottom: 1px solid var(--saxa-charcoal) !important;
+    background-color: var(--saxa-black) !important;
+    border-bottom: 1px solid var(--saxa-charcoal) !important;
 }
 
 header a {
-  color: var(--saxa-white) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: color 0.3s ease;
+    color: var(--saxa-white) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
 }
 
 header a:hover {
-  color: var(--saxa-grey) !important;
+    color: var(--saxa-grey) !important;
 }
 
 /* Footer Overrides */
 footer {
-  background-color: var(--saxa-black) !important;
-  border-top: 1px solid var(--saxa-charcoal) !important;
-  color: var(--saxa-grey) !important;
+    background-color: var(--saxa-black) !important;
+    border-top: 1px solid var(--saxa-charcoal) !important;
+    color: var(--saxa-grey) !important;
 }
 
 footer a {
+    color: var(--saxa-white) !important;
+}
+/* Product Card Overrides (Skeleton Theme) */
+.collection-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.collection-product {
+  background-color: transparent !important;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.collection-product:hover {
+  border-color: var(--saxa-charcoal);
+}
+
+.collection-product__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0 !important;
+}
+
+.collection-product__content {
+  padding: 1rem 0;
+  text-align: left;
+}
+
+.collection-product__content p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.collection-product__content a {
   color: var(--saxa-white) !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.collection-product__content p:last-child {
+  color: var(--saxa-grey) !important;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
