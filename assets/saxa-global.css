@@ -259,52 +259,277 @@ footer {
 footer a {
     color: var(--saxa-white) !important;
 }
+
 /* Product Card Overrides (Skeleton Theme) */
 .collection-products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
-  gap: 2rem;
-  padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+select,
+.field__input {
+    background-color: var(--saxa-black) !important;
+    color: var(--saxa-white) !important;
+    border: 1px solid var(--saxa-charcoal) !important;
+}
+
+.field__input:focus,
+.field__input:active {
+    border-color: var(--saxa-white) !important;
+    box-shadow: 0 0 0 1px var(--saxa-white) !important;
+}
+
+.field__label {
+    color: var(--saxa-grey) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* PRODUCT CARDS                                                              */
+/* -------------------------------------------------------------------------- */
+
+.card-wrapper {
+    background-color: transparent !important;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.card-wrapper:hover {
+    border-color: var(--saxa-charcoal);
+}
+
+.card__content {
+    background-color: transparent !important;
+}
+
+.card__heading {
+    color: var(--saxa-white) !important;
+    font-size: 1.1rem;
+}
+
+.price-item {
+    color: var(--saxa-grey) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* NAVIGATION & HEADER                                                        */
+/* -------------------------------------------------------------------------- */
+
+.header-wrapper {
+    background-color: var(--saxa-black) !important;
+    border-bottom: 1px solid var(--saxa-charcoal);
+}
+
+.header__menu-item,
+.header__active-menu-item {
+    color: var(--saxa-white) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+}
+
+.header__menu-item:hover {
+    color: var(--saxa-grey) !important;
+    text-decoration: none !important;
+}
+
+.header__icon {
+    color: var(--saxa-white) !important;
+}
+
+/* Dropdowns */
+.header__submenu {
+    background-color: var(--saxa-black) !important;
+    border: 1px solid var(--saxa-charcoal) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* FOOTER                                                                     */
+/* -------------------------------------------------------------------------- */
+
+.footer {
+    background-color: var(--saxa-black) !important;
+    border-top: 1px solid var(--saxa-charcoal);
+}
+
+.footer-block__heading {
+    color: var(--saxa-white) !important;
+}
+
+.link {
+    color: var(--saxa-grey) !important;
+}
+
+.link:hover {
+    color: var(--saxa-white) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* UTILS & OVERRIDES                                                          */
+/* -------------------------------------------------------------------------- */
+
+/* Remove shadows globally */
+.shadow-sm,
+.shadow-md,
+.shadow-lg,
+.card {
+    box-shadow: none !important;
+}
+
+/* Modal/Drawer backgrounds */
+.drawer__inner,
+.popup-modal__content {
+    background-color: var(--saxa-black) !important;
+    border: 1px solid var(--saxa-charcoal);
+}
+
+/* -------------------------------------------------------------------------- */
+/* SKELETON THEME SPECIFIC OVERRIDES                                          */
+/* -------------------------------------------------------------------------- */
+
+.welcome {
+    background-color: var(--saxa-black) !important;
+    color: var(--saxa-white) !important;
+}
+
+.welcome-description {
+    color: var(--saxa-grey) !important;
+}
+
+.highlight {
+    background-color: transparent !important;
+    border: 1px solid var(--saxa-charcoal) !important;
+    border-radius: 0 !important;
+    color: var(--saxa-grey) !important;
+}
+
+.highlight h3 {
+    color: var(--saxa-white) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.highlight a {
+    background-color: var(--saxa-black) !important;
+    color: var(--saxa-white) !important;
+    border: 1px solid var(--saxa-white) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.highlight a:hover {
+    background-color: var(--saxa-white) !important;
+    color: var(--saxa-black) !important;
+    text-decoration: none !important;
+}
+
+/* Header Overrides */
+header {
+    background-color: var(--saxa-black) !important;
+    border-bottom: 1px solid var(--saxa-charcoal) !important;
+}
+
+header a {
+    color: var(--saxa-white) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: var(--saxa-grey) !important;
+}
+
+/* Footer Overrides */
+footer {
+    background-color: var(--saxa-black) !important;
+    border-top: 1px solid var(--saxa-charcoal) !important;
+    color: var(--saxa-grey) !important;
+}
+
+footer a {
+    color: var(--saxa-white) !important;
+}
+
+/* Product Card Overrides (Skeleton Theme) */
+.collection-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* Utility: Fade In Animation */
+.saxa-fade-in,
+.saxa-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.saxa-fade-in.visible,
+.saxa-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .collection-product {
-  background-color: transparent !important;
-  border: 1px solid transparent;
-  transition: border-color 0.3s ease;
+    background-color: transparent !important;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+    /* For zoom effect */
 }
 
 .collection-product:hover {
-  border-color: var(--saxa-charcoal);
+    border-color: transparent;
+    /* No border on hover as requested */
+}
+
+.collection-product__image {
+    overflow: hidden;
 }
 
 .collection-product__image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0 !important;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0 !important;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.collection-product:hover .collection-product__image img {
+    transform: scale(1.05);
 }
 
 .collection-product__content {
-  padding: 1rem 0;
-  text-align: left;
+    padding: 1rem 0;
+    text-align: left;
 }
 
 .collection-product__content p {
-  margin: 0;
-  line-height: 1.4;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .collection-product__content a {
-  color: var(--saxa-white) !important;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-  font-size: 1rem;
+    color: var(--saxa-white) !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    font-size: 0.9rem;
+    /* 0.9rem as requested */
 }
 
 .collection-product__content p:last-child {
-  color: var(--saxa-grey) !important;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+    color: #888888 !important;
+    /* Specific Grey */
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
 }

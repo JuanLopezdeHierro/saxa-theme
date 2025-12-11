@@ -1,52 +1,129 @@
-{% comment %}
-  This section is used in the product template to render product page with
-  media, content, and add-to-cart form.
+<div class="product-split-layout">
+  <div class="product-split__images">
+    {% for image in product.images %}
+      {% render 'image', class: 'product-image-full', image: image, width: 2000 %}
+    {% endfor %}
+  </div>
 
-  https://shopify.dev/docs/storefronts/themes/architecture/templates/product
-{% endcomment %}
+  <div class="product-split__info">
+    <div class="product-split__sticky-content saxa-reveal">
+      <h1 class="product-title">{{ product.title }}</h1>
+      <p class="product-price">{{ product.price | money }}</p>
+      
+      <div class="product-description rte">
+        {{ product.description }}
+      </div>
 
-<div class="product-images">
-  {% for image in product.images %}
-    {% render 'image', class: 'product-image', image: image %}
-  {% endfor %}
+      <div class="product-form-container">
+        {% form 'product', product %}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <button type="submit" name="add" class="button button--full-width button--high-contrast">
+            Add to Cart
+          </button>
+        {% endform %}
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="product-info">
-  <h1>{{ product.title }}</h1>
-  <p>{{ product.price | money }}</p>
-  <p>{{ product.description }}</p>
-</div>
+{% stylesheet %}
+  .product-split-layout {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    min-height: 100vh;
+  }
 
-<div class="product-form">
-  {% form 'product', product %}
-    {% assign current_variant = product.selected_or_first_available_variant %}
+  .product-split__images {
+    background-color: #000000;
+    padding: 0;
+  }
 
-    <select name="id">
-      {% for variant in product.variants %}
-        <option
-          value="{{ variant.id }}"
-          {% if variant == current_variant %}
-            selected="selected"
-          {% endif %}
-        >
-          {{ variant.title }} - {{ variant.price | money }}
-        </option>
-      {% endfor %}
-    </select>
+  .product-image-full {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0;
+  }
 
-    <input type="text" name="quantity" min="1" value="1">
+  .product-split__info {
+    position: relative;
+    background-color: #000000;
+    border-left: 1px solid #333333;
+  }
 
-    <input type="submit" value="Add to cart">
-    {{ form | payment_button }}
-  {% endform %}
-</div>
+  .product-split__sticky-content {
+    position: sticky;
+    top: 6rem; /* Below header */
+    padding: 4rem;
+    height: fit-content;
+  }
+
+  .product-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+
+  .product-price {
+    font-size: 1.5rem;
+    color: #CCCCCC;
+    margin-bottom: 2rem;
+    font-family: monospace;
+  }
+
+  .product-description {
+    margin-bottom: 3rem;
+    color: #CCCCCC;
+    line-height: 1.6;
+  }
+
+  .button--full-width {
+    width: 100%;
+    display: block;
+  }
+
+  .button--high-contrast {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: none !important;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .button--high-contrast:hover {
+    background-color: #CCCCCC !important;
+  }
+
+  @media screen and (max-width: 900px) {
+    .product-split-layout {
+      grid-template-columns: 1fr;
+    }
+    .product-split__sticky-content {
+      position: static;
+      padding: 2rem;
+    }
+    .product-split__info {
+      border-left: none;
+      border-top: 1px solid #333333;
+    }
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
-  "name": "t:general.product",
+  "name": "SAXA Product Page",
+  "tag": "section",
+  "class": "section",
   "settings": [],
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  }
+  "presets": [
+    {
+      "name": "SAXA Product Page"
+    }
+  ]
 }
 {% endschema %}
