@@ -1,97 +1,121 @@
 /* SAXA Custom CSS - Tech Noir / Brutalist Overhaul */
 
 :root {
-  /* Strict Design Tokens */
-  --saxa-black: #000000;
-  --saxa-white: #FFFFFF;
-  --saxa-grey: #CCCCCC;
-  --saxa-charcoal: #333333;
-  
-  /* Override Dawn Global Variables */
-  --color-base-text: 255, 255, 255; /* RGB for White */
-  --color-base-background-1: 0, 0, 0; /* RGB for Black */
-  --color-base-background-2: 0, 0, 0;
-  --color-base-solid-button-labels: 0, 0, 0;
-  --color-base-outline-button-labels: 255, 255, 255;
-  --color-base-accent-1: 0, 0, 0;
-  --color-base-accent-2: 0, 0, 0;
-  
-  --page-width: 1600px; /* Wider layout for brutalist feel */
+    /* Strict Design Tokens */
+    --saxa-black: #000000;
+    --saxa-white: #FFFFFF;
+    --saxa-grey: #CCCCCC;
+    --saxa-charcoal: #333333;
+
+    /* Override Dawn Global Variables */
+    --color-base-text: 255, 255, 255;
+    /* RGB for White */
+    --color-base-background-1: 0, 0, 0;
+    /* RGB for Black */
+    --color-base-background-2: 0, 0, 0;
+    --color-base-solid-button-labels: 0, 0, 0;
+    --color-base-outline-button-labels: 255, 255, 255;
+    --color-base-accent-1: 0, 0, 0;
+    --color-base-accent-2: 0, 0, 0;
+
+    --page-width: 1600px;
+    /* Wider layout for brutalist feel */
 }
 
 /* -------------------------------------------------------------------------- */
 /* GLOBAL RESETS & TYPOGRAPHY                                                 */
 /* -------------------------------------------------------------------------- */
 
-body, .gradient {
-  background-color: var(--saxa-black) !important;
-  color: var(--saxa-white) !important;
+body,
+.gradient {
+    background-color: var(--saxa-black) !important;
+    color: var(--saxa-white) !important;
 }
 
-h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: var(--saxa-white) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-  font-weight: 700 !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: var(--saxa-white) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 700 !important;
 }
 
-p, .body, .rte {
-  color: var(--saxa-grey) !important;
+p,
+.body,
+.rte {
+    color: var(--saxa-grey) !important;
 }
 
 /* Force sharp corners everywhere */
 * {
-  border-radius: 0 !important;
+    border-radius: 0 !important;
 }
 
 /* -------------------------------------------------------------------------- */
 /* BUTTONS                                                                    */
 /* -------------------------------------------------------------------------- */
 
-.button, .shopify-payment-button__button--unbranded {
-  background-color: var(--saxa-black) !important;
-  color: var(--saxa-white) !important;
-  border: 1px solid var(--saxa-white) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: none !important;
+.button,
+.shopify-payment-button__button--unbranded {
+    background-color: var(--saxa-black) !important;
+    color: var(--saxa-white) !important;
+    border: 1px solid var(--saxa-white) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none !important;
 }
 
-.button:hover, .shopify-payment-button__button--unbranded:hover {
-  background-color: var(--saxa-white) !important;
-  color: var(--saxa-black) !important;
-  border-color: var(--saxa-white) !important;
+.button:hover,
+.shopify-payment-button__button--unbranded:hover {
+    background-color: var(--saxa-white) !important;
+    color: var(--saxa-black) !important;
+    border-color: var(--saxa-white) !important;
 }
 
 .button--secondary {
-  background-color: transparent !important;
-  color: var(--saxa-white) !important;
-  border: 1px solid var(--saxa-charcoal) !important;
+    background-color: transparent !important;
+    color: var(--saxa-white) !important;
+    border: 1px solid var(--saxa-charcoal) !important;
 }
 
 .button--secondary:hover {
-  background-color: var(--saxa-charcoal) !important;
-  color: var(--saxa-white) !important;
+    background-color: var(--saxa-charcoal) !important;
+    color: var(--saxa-white) !important;
 }
 
 /* -------------------------------------------------------------------------- */
 /* INPUTS & FORMS                                                             */
 /* -------------------------------------------------------------------------- */
 
-input, textarea, select, .field__input {
-  background-color: var(--saxa-black) !important;
-  color: var(--saxa-white) !important;
-  border: 1px solid var(--saxa-charcoal) !important;
+input,
+textarea,
+select,
+.field__input {
+    background-color: var(--saxa-black) !important;
+    color: var(--saxa-white) !important;
+    border: 1px solid var(--saxa-charcoal) !important;
 }
 
-.field__input:focus, .field__input:active {
-  border-color: var(--saxa-white) !important;
-  box-shadow: 0 0 0 1px var(--saxa-white) !important;
+.field__input:focus,
+.field__input:active {
+    border-color: var(--saxa-white) !important;
+    box-shadow: 0 0 0 1px var(--saxa-white) !important;
 }
 
 .field__label {
-  color: var(--saxa-grey) !important;
+    color: var(--saxa-grey) !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -99,26 +123,26 @@ input, textarea, select, .field__input {
 /* -------------------------------------------------------------------------- */
 
 .card-wrapper {
-  background-color: transparent !important;
-  border: 1px solid transparent;
-  transition: border-color 0.3s ease;
+    background-color: transparent !important;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
 }
 
 .card-wrapper:hover {
-  border-color: var(--saxa-charcoal);
+    border-color: var(--saxa-charcoal);
 }
 
 .card__content {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 .card__heading {
-  color: var(--saxa-white) !important;
-  font-size: 1.1rem;
+    color: var(--saxa-white) !important;
+    font-size: 1.1rem;
 }
 
 .price-item {
-  color: var(--saxa-grey) !important;
+    color: var(--saxa-grey) !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -126,30 +150,31 @@ input, textarea, select, .field__input {
 /* -------------------------------------------------------------------------- */
 
 .header-wrapper {
-  background-color: var(--saxa-black) !important;
-  border-bottom: 1px solid var(--saxa-charcoal);
+    background-color: var(--saxa-black) !important;
+    border-bottom: 1px solid var(--saxa-charcoal);
 }
 
-.header__menu-item, .header__active-menu-item {
-  color: var(--saxa-white) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.9rem;
+.header__menu-item,
+.header__active-menu-item {
+    color: var(--saxa-white) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
 }
 
 .header__menu-item:hover {
-  color: var(--saxa-grey) !important;
-  text-decoration: none !important;
+    color: var(--saxa-grey) !important;
+    text-decoration: none !important;
 }
 
 .header__icon {
-  color: var(--saxa-white) !important;
+    color: var(--saxa-white) !important;
 }
 
 /* Dropdowns */
 .header__submenu {
-  background-color: var(--saxa-black) !important;
-  border: 1px solid var(--saxa-charcoal) !important;
+    background-color: var(--saxa-black) !important;
+    border: 1px solid var(--saxa-charcoal) !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -157,20 +182,20 @@ input, textarea, select, .field__input {
 /* -------------------------------------------------------------------------- */
 
 .footer {
-  background-color: var(--saxa-black) !important;
-  border-top: 1px solid var(--saxa-charcoal);
+    background-color: var(--saxa-black) !important;
+    border-top: 1px solid var(--saxa-charcoal);
 }
 
 .footer-block__heading {
-  color: var(--saxa-white) !important;
+    color: var(--saxa-white) !important;
 }
 
 .link {
-  color: var(--saxa-grey) !important;
+    color: var(--saxa-grey) !important;
 }
 
 .link:hover {
-  color: var(--saxa-white) !important;
+    color: var(--saxa-white) !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -178,16 +203,86 @@ input, textarea, select, .field__input {
 /* -------------------------------------------------------------------------- */
 
 /* Remove shadows globally */
-.shadow-sm, .shadow-md, .shadow-lg, .card {
-  box-shadow: none !important;
+.shadow-sm,
+.shadow-md,
+.shadow-lg,
+.card {
+    box-shadow: none !important;
 }
 
 /* Modal/Drawer backgrounds */
-.drawer__inner, .popup-modal__content {
-  background-color: var(--saxa-black) !important;
-  border: 1px solid var(--saxa-charcoal);
+.drawer__inner,
+.popup-modal__content {
+    background-color: var(--saxa-black) !important;
+    border: 1px solid var(--saxa-charcoal);
 }
 
-.drawer__close, .modal__close-button {
+/* -------------------------------------------------------------------------- */
+/* SKELETON THEME SPECIFIC OVERRIDES                                          */
+/* -------------------------------------------------------------------------- */
+
+.welcome {
+    background-color: var(--saxa-black) !important;
+    color: var(--saxa-white) !important;
+}
+
+.welcome-description {
+    color: var(--saxa-grey) !important;
+}
+
+.highlight {
+    background-color: transparent !important;
+    border: 1px solid var(--saxa-charcoal) !important;
+    border-radius: 0 !important;
+    color: var(--saxa-grey) !important;
+}
+
+.highlight h3 {
+    color: var(--saxa-white) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.highlight a {
+    background-color: var(--saxa-black) !important;
+    color: var(--saxa-white) !important;
+    border: 1px solid var(--saxa-white) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.highlight a:hover {
+    background-color: var(--saxa-white) !important;
+    color: var(--saxa-black) !important;
+    text-decoration: none !important;
+}
+/* Header Overrides */
+header {
+  background-color: var(--saxa-black) !important;
+  border-bottom: 1px solid var(--saxa-charcoal) !important;
+}
+
+header a {
+  color: var(--saxa-white) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s ease;
+}
+
+header a:hover {
+  color: var(--saxa-grey) !important;
+}
+
+/* Footer Overrides */
+footer {
+  background-color: var(--saxa-black) !important;
+  border-top: 1px solid var(--saxa-charcoal) !important;
+  color: var(--saxa-grey) !important;
+}
+
+footer a {
   color: var(--saxa-white) !important;
 }
